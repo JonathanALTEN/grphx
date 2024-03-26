@@ -7,7 +7,7 @@
   * [Code Example](#code-example)
 * [Integration](#integration)
   * [Requirements](#requirements)
-  * [How to use](#How to use)
+  * [How to use](#How-to-use)
 * [Documentation](#documentation)
 * [Tests](#tests)
 * [GrphX in Action](#grphx-in-action)
@@ -54,6 +54,25 @@ To use `GrphX`, simply include the `grphx.hpp` header file in your project:
 
 ```cpp
 #include <grphx/grphx.hpp>
+```
+
+# CMake
+
+### Building with CMake
+To build the `GrphX` project, follow these steps:
+
+1. Clone or Download: Obtain the `GrphX` project by either cloning the repository or downloading the source code archive.
+
+2. Install CMake: Ensure that CMake is installed on your system. You can download and install CMake from the official website: https://cmake.org/download/.
+
+3. Build the Project:
+
+- Open a terminal or command prompt and navigate to the root directory of the `GrphX` project.
+
+- Run the following commands:
+```ps1 
+cmake -S . -B build
+cmake --build build
 ```
 
 # Documentation
