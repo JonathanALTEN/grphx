@@ -1,0 +1,32 @@
+if (BUILD_TESTING)
+    # Define the test executables
+    add_executable(add_vertex_test add_vertex_tests.cpp)
+    add_executable(add_edge_test add_edge_tests.cpp)
+    add_executable(contains_vertex_test contains_vertex_tests.cpp)
+    add_executable(contains_edge_test contains_edge_tests.cpp)
+    add_executable(remove_edge_test remove_edge_tests.cpp)
+    add_executable(remove_vertex_test remove_vertex_tests.cpp)
+    add_executable(check_degree_test check_degree_tests.cpp)
+    add_executable(check_neighbors_test check_neighbors_tests.cpp)
+
+    # Link each test executable with Google Test and your library
+    target_link_libraries(add_vertex_test PRIVATE grphx gtest_main)
+    target_link_libraries(add_edge_test PRIVATE grphx gtest_main)
+    target_link_libraries(contains_vertex_test PRIVATE grphx gtest_main)
+    target_link_libraries(contains_edge_test PRIVATE grphx gtest_main)
+    target_link_libraries(remove_edge_test PRIVATE grphx gtest_main)
+    target_link_libraries(remove_vertex_test PRIVATE grphx gtest_main)
+    target_link_libraries(check_degree_test PRIVATE grphx gtest_main)
+    target_link_libraries(check_neighbors_test PRIVATE grphx gtest_main)
+
+    # Define the tests
+    include(GoogleTest)
+    gtest_discover_tests(add_vertex_test)
+    gtest_discover_tests(add_edge_test)
+    gtest_discover_tests(contains_vertex_test)
+    gtest_discover_tests(contains_edge_test)
+    gtest_discover_tests(remove_edge_test)
+    gtest_discover_tests(remove_vertex_test)
+    gtest_discover_tests(check_degree_test)
+    gtest_discover_tests(check_neighbors_test)
+endif()
