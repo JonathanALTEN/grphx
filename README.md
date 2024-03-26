@@ -69,7 +69,7 @@ To build the `GrphX` project, follow these steps:
 
 - Open a terminal or command prompt and navigate to the root directory of the `GrphX` project.
 
-- Run the following commands:
+- Run the following commands in the terminal:
 ```ps1 
 cmake -S . -B build
 cmake --build build
