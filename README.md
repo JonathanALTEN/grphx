@@ -10,40 +10,90 @@
   * [How to use](#How-to-use)
 * [Documentation](#documentation)
 * [Tests](#tests)
-* [GrphX in Action](#grphx-in-action)
 
 # Introduction
 
-### Motivation
-
-`GrphX` aims to provide a lightweight and easy-to-use solution for graph-related operations in C++ projects. It currently offers some common operations for directed and undirected graphs.
+## Motivation
+`GrphX` strives to offer a lightweight and user-friendly solution for graph-related tasks within C++ projects. The library currently provides essential functionalities for both directed and undirected graphs. It's worth noting that this project originated as a hobby endeavor, primarily aimed at gaining familiarity with some functions and algorithms in the C++ standard library, but also how to use Google Test framework.
 
 ### Code Example
-
+Example 1: Basic Usage of Directed Graph.
 ```cpp
-#include <iostream>
 #include <grphx/directed_graph.hpp>
+//#include <grphx/grphx.hpp>
 
 int main() {
-    // Create a directed graph
-    grphx::directed_graph<int> graph;
+  // Create a directed graph
+  grphx::directed_graph<int> graph;
 
-    // Add vertices
-    graph.add_vertex(1);
-    graph.add_vertex(2);
-    graph.add_vertex(3);
+  // Add vertices
+  graph.add_vertex(1);
+  graph.add_vertex(2);
+  graph.add_vertex(3);
 
-    // Add edges
-    graph.add_edge(1, 3);
-    graph.add_edge(2, 3);
+  // Add edges
+  graph.add_edge(1, 3);
+  graph.add_edge(2, 3);
 
-    // Perform graph operations...
-    const auto predecessors = graph.predecessors(3);
+  // Get predecessors of vertex 3
+  const auto predecessors = graph.predecessors(3);
+
+  // Output the predecessors of vertex 3
+  std::cout << "Predecessors of vertex 3: ";
+  for (const auto& predecessor : predecessors) {
+      std::cout << predecessor << " ";
+  }
+  std::cout << std::endl;
+
+  return 0;
+}
+```
+
+Example 2: Using Custom Data Types with an Undirected Graph.
+```cpp
+#include <grphx/undirected_graph.hpp>
+//#include <grphx/grphx.hpp>
+
+struct CustomType {
+    int value;
+
+    // Overload the equality operator
+    bool operator==(const CustomType& other) const {
+        return value == other.value;
+    }
+};
+
+int main() {
+    // Create an undirected graph with custom data type
+    grphx::undirected_graph<CustomType> graph;
+
+    // Define some vertices
+    CustomType vertex1{1};
+    CustomType vertex2{2};
+    CustomType vertex3{3};
+
+    // Add vertices to the graph
+    graph.add_vertex(vertex1);
+    graph.add_vertex(vertex2);
+    graph.add_vertex(vertex3);
+
+    // Add edges between vertices
+    graph.add_edge(vertex1, vertex2);
+    graph.add_edge(vertex2, vertex3);
+
+    // Perform graph operations using custom data types
+    bool hasEdge12 = graph.contains_edge(vertex1, vertex2); // true
+    bool hasEdge23 = graph.contains_edge(vertex2, vertex3); // true
+    bool hasEdge13 = graph.contains_edge(vertex1, vertex3); // false
+
+    // Output the results
+    std::cout << "Edge between vertex1 and vertex2: " << std::boolalpha << hasEdge12 << std::endl;
+    std::cout << "Edge between vertex2 and vertex3: " << std::boolalpha << hasEdge23 << std::endl;
+    std::cout << "Edge between vertex1 and vertex3: " << std::boolalpha << hasEdge13 << std::endl;
 
     return 0;
 }
 ```
-
 # Integration
 
 ### Requirements
@@ -76,10 +126,8 @@ cmake --build build
 ```
 
 # Documentation
-Comprehensive documentation for `GrphX` is available in the documentation directory.
+Comprehensive documentation for `GrphX` is available in the documentation directory. Open `index.html` in `docs/html/`.
 
 # Tests
 To run all tests for the `GrphX` library; first build the project, then execute the `run_tests.ps1` script located in the script folder. This script will automatically execute all test cases and provide the test results.
 
-# GrphX in Action
-Examples of GrphX in action can be found in the examples directory. These examples demonstrate various use cases and scenarios where `GrphX` can be applied effectively.

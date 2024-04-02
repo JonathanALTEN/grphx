@@ -14,11 +14,6 @@ namespace grphx {
             /**
              * @brief Checks if the graph contains a vertex.
              * 
-             * This function checks if the graph contains a vertex of type `T`. It supports
-             * certain built-in types such as `int`, `float`, `double`, `char`, and `std::string`.
-             * For other user-defined types, the `operator==` must be overloaded to compare
-             * vertices for equality.
-             * 
              * @param v The vertex to check for.
              * @return True if the vertex is found in the graph, false otherwise.
              */
@@ -153,10 +148,6 @@ namespace grphx {
 
         /**
          * @brief Checks if the graph contains a directed edge from vertex `u` to vertex `v`.
-         * 
-         * This function checks if the graph contains a directed edge from vertex `u` to vertex `v`.
-         * It supports certain built-in types such as `int`, `float`, `double`, `char`, and `std::string`.
-         * For other user-defined types, the `operator==` must be overloaded to compare vertices for equality.
          * 
          * @param u The source vertex of the edge.
          * @param v The destination vertex of the edge.
@@ -348,10 +339,6 @@ namespace grphx {
 
         /**
          * @brief Checks if the graph contains an edge between two vertices.
-         * 
-         * This function checks if the graph contains an edge between the vertices `u` and `v`.
-         * It supports certain built-in types such as `int`, `float`, `double`, `char`, and `std::string`.
-         * For other user-defined types, the `operator==` must be overloaded to compare vertices for equality.
          * 
          * @param u The source vertex of the edge.
          * @param v The destination vertex of the edge.
