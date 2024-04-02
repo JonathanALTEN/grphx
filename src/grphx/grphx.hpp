@@ -1,5 +1,6 @@
 #include <iostream>
 #include <list>
+#include <queue>
 #include <algorithm>
 
 namespace grphx {
@@ -46,6 +47,68 @@ namespace grphx {
              */
             void clear() {
                 m_adjacency_list.clear();
+            }
+
+            /**
+             * @brief Breadth-First Search (BFS) algorithm.
+             * 
+             * @param start The starting vertex for BFS traversal.
+             * @return A vector containing the vertices visited during BFS traversal.
+             */
+            std::vector<T> bfs(T start) const {
+                std::vector<T> visited;
+                std::queue<T> queue;
+                std::unordered_set<T> seen;
+                
+                queue.push(start);
+                seen.insert(start);
+                
+                while (!queue.empty()) {
+                    T current = queue.front();
+                    queue.pop();
+                    visited.push_back(current);
+                    
+                    for (const auto& neighbor : successors(current)) {
+                        if (seen.find(neighbor) == seen.end()) {
+                            queue.push(neighbor);
+                            seen.insert(neighbor);
+                        }
+                    }
+                }
+                
+                return visited;
+            }
+
+            /**
+             * @brief Depth-First Search (DFS) algorithm.
+             * 
+             * @param start The starting vertex for DFS traversal.
+             * @return A vector containing the vertices visited during DFS traversal.
+             */
+            std::vector<T> dfs(T start) const {
+                std::vector<T> visited;
+                std::stack<T> stack;
+                std::unordered_set<T> seen;
+                
+                stack.push(start);
+                
+                while (!stack.empty()) {
+                    T current = stack.top();
+                    stack.pop();
+                    
+                    if (seen.find(current) == seen.end()) {
+                        visited.push_back(current);
+                        seen.insert(current);
+                        
+                        for (const auto& neighbor : successors(current)) {
+                            if (seen.find(neighbor) == seen.end()) {
+                                stack.push(neighbor);
+                            }
+                        }
+                    }
+                }
+                
+                return visited;
             }
 
             virtual void add_vertex(T v) = 0;

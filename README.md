@@ -94,6 +94,45 @@ int main() {
     return 0;
 }
 ```
+
+Example 3: Demonstrates Breadth-First Search (BFS) and Depth-First Search (DFS) in an Undirected Graph.
+```cpp
+#include <grphx/undirected_graph.hpp>
+//#include <grphx/grphx.hpp>
+
+int main() {
+  // Create an undirected graph
+  grphx::undirected_graph<int> graph;
+
+  // Add vertices to the graph
+  graph.add_vertex(1);
+  graph.add_vertex(2);
+  graph.add_vertex(3);
+  graph.add_vertex(4);
+  graph.add_vertex(5);
+
+  // Add edges between vertices
+  graph.add_edge(1, 2);
+  graph.add_edge(1, 3);
+  graph.add_edge(2, 4);
+  graph.add_edge(3, 5);
+
+  std::cout << "BFS traversal: ";
+  for (int vertex : graph.bfs(1)) {
+      std::cout << vertex << " ";
+  }
+  std::cout << std::endl;
+
+  std::cout << "DFS traversal: ";
+  for (int vertex : graph.dfs(1)) {
+      std::cout << vertex << " ";
+  }
+  std::cout << std::endl;
+
+  return 0;
+}
+```
+
 # Integration
 
 ### Requirements
