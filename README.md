@@ -34,11 +34,11 @@ int main() {
     graph.add_vertex(3);
 
     // Add edges
-    graph.add_edge(1, 2);
+    graph.add_edge(1, 3);
     graph.add_edge(2, 3);
 
     // Perform graph operations...
-    const auto neighbours = graph.neighbours(2);
+    const auto predecessors = graph.predecessors(3);
 
     return 0;
 }
@@ -76,7 +76,7 @@ cmake --build build
 ```
 
 # Documentation
-Comprehensive documentation for `GrphX` is available in the documentation directory. It includes detailed explanations of the library's features, usage examples, and API reference.
+Comprehensive documentation for `GrphX` is available in the documentation directory.
 
 # Tests
 To run all tests for the `GrphX` library; first build the project, then execute the `run_tests.ps1` script located in the script folder. This script will automatically execute all test cases and provide the test results.
