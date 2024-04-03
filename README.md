@@ -41,7 +41,7 @@ int main() {
   // Output the predecessors of vertex 3
   std::cout << "Predecessors of vertex 3: ";
   for (const auto& predecessor : predecessors) {
-      std::cout << predecessor << " ";
+    std::cout << predecessor << " ";
   }
   std::cout << std::endl;
 
@@ -59,7 +59,7 @@ struct CustomType {
 
     // Overload the equality operator
     bool operator==(const CustomType& other) const {
-        return value == other.value;
+      return value == other.value;
     }
 };
 
@@ -119,13 +119,13 @@ int main() {
 
   std::cout << "BFS traversal: ";
   for (int vertex : graph.bfs(1)) {
-      std::cout << vertex << " ";
+    std::cout << vertex << " ";
   }
   std::cout << std::endl;
 
   std::cout << "DFS traversal: ";
   for (int vertex : graph.dfs(1)) {
-      std::cout << vertex << " ";
+    std::cout << vertex << " ";
   }
   std::cout << std::endl;
 

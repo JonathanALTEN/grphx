@@ -3,6 +3,6 @@ if (BUILD_TESTING)
     enable_testing()
 
     # Add test subdirectories
-    add_subdirectory(directed_graph)
-    add_subdirectory(undirected_graph)
+    add_subdirectory(directed_graph_tests)
+    add_subdirectory(undirected_graph_tests)
 endif()
