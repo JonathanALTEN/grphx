@@ -14,13 +14,12 @@
 # Introduction
 
 ## Motivation
-`GrphX` strives to offer a lightweight and user-friendly solution for graph-related tasks within C++ projects. The library currently provides essential functionalities for both directed and undirected graphs. It's worth noting that this project originated as a hobby endeavor, primarily aimed at gaining familiarity with some functions and algorithms in the C++ standard library, but also how to use Google Test framework.
+`GrphX` strives to offer a lightweight and user-friendly solution for graph-related tasks within C++ projects. The library currently provides essential functionalities for both directed and undirected graphs. It's worth noting that this project originated as a hobby endeavor, primarily aimed at gaining familiarity with some functions and algorithms in the C++ standard library, but also how to use Google Test framework. I advise you not to use the is any commercial product, it's not fully tested and might produce errors. However, the library is free to use and modify as you like to fit your particular needs. 
 
 ### Code Example
 Example 1: Basic Usage of Directed Graph.
 ```cpp
-#include <grphx/directed_graph.hpp>
-//#include <grphx/grphx.hpp>
+#include <grphx/grphx.hpp>
 
 int main() {
   // Create a directed graph
@@ -51,8 +50,7 @@ int main() {
 
 Example 2: Using Custom Data Types with an Undirected Graph.
 ```cpp
-#include <grphx/undirected_graph.hpp>
-//#include <grphx/grphx.hpp>
+#include <grphx/grphx.hpp>
 
 struct CustomType {
     int value;
@@ -97,8 +95,7 @@ int main() {
 
 Example 3: Demonstrates Breadth-First Search (BFS) and Depth-First Search (DFS) in an Undirected Graph.
 ```cpp
-#include <grphx/undirected_graph.hpp>
-//#include <grphx/grphx.hpp>
+#include <grphx/grphx.hpp>
 
 int main() {
   // Create an undirected graph
