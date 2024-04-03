@@ -14,7 +14,7 @@
 # Introduction
 
 ## Motivation
-`GrphX` aims to provide a lightweight and intuitive solution for handling graph-related operations within C++ projects. The library currently offers fundamental functionalities for both directed and undirected graphs. Originating as a hobby project, its primary goal was to explore various functions and algorithms within the C++ standard library and to become acquainted with the Google Test framework. It's important to note that while GrphX is freely available for use and modification to suit individual needs, it's advisable not to deploy it in commercial products due to its limited testing and potential for errors.
+`GrphX` aims to provide a lightweight and intuitive solution for handling graph-related operations within C++ projects. The library currently offers fundamental functionalities for both directed and undirected graphs. Originating as a hobby project, its primary goal was to explore various functions and algorithms within the C++ standard library and to become acquainted with the Google Test framework. It's important to note that while `GrphX` is freely available for use and modification to suit individual needs, it's advisable not to deploy it in commercial products due to its limited testing and potential for errors.
 
 ### Code Example
 Example 1: Basic Usage of Directed Graph.
