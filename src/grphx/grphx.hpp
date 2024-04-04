@@ -19,9 +19,9 @@ namespace grphx {
              * @return True if the vertex is found in the graph, false otherwise.
              */
             bool contains_vertex(T v) const {
-                return std::find_if(m_adjacency_list.begin(), m_adjacency_list.end(), [&v](const std::pair<T, std::list<T>>& pair) {
+                return std::find_if(this->m_adjacency_list.begin(), this->m_adjacency_list.end(), [&v](const std::pair<T, std::list<T>>& pair) {
                     return pair.first == v;
-                }) != m_adjacency_list.end();
+                }) != this->m_adjacency_list.end();
             }
 
             /**
@@ -30,7 +30,7 @@ namespace grphx {
              * @return The number of vertices in the graph.
              */
             size_t size() const {
-                return m_adjacency_list.size();
+                return this->m_adjacency_list.size();
             }
 
             /**
@@ -39,14 +39,14 @@ namespace grphx {
              * @return True if the graph is empty, false otherwise.
              */
             bool is_empty() const {
-                return m_adjacency_list.empty();
+                return this->m_adjacency_list.empty();
             }
 
             /**
              * @brief Clears the graph, removing all vertices and edges.
              */
             void clear() {
-                m_adjacency_list.clear();
+                this->m_adjacency_list.clear();
             }
 
             /**
@@ -68,7 +68,7 @@ namespace grphx {
                     queue.pop();
                     visited.push_back(current);
                     
-                    for (const auto& neighbor : successors(current)) {
+                    for (const auto& neighbor : this->successors(current)) {
                         if (seen.find(neighbor) == seen.end()) {
                             queue.push(neighbor);
                             seen.insert(neighbor);
@@ -100,7 +100,7 @@ namespace grphx {
                         visited.push_back(current);
                         seen.insert(current);
                         
-                        for (const auto& neighbor : successors(current)) {
+                        for (const auto& neighbor : this->successors(current)) {
                             if (seen.find(neighbor) == seen.end()) {
                                 stack.push(neighbor);
                             }
@@ -121,7 +121,7 @@ namespace grphx {
             LinkedList m_adjacency_list;
         };
 
-    } // namespace internal
+    } // end of namespace internal
 
     template<typename T>
     class directed_graph : public internal::basic_graph<T> {
@@ -452,5 +452,5 @@ namespace grphx {
         }
     }; 
 
-} // namespace grphx
+} // end of namespace grphx
    
